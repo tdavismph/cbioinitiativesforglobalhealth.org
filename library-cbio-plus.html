@@ -45,8 +45,13 @@ display:block;transition:border-color .15s}
 .card .count{font-size:.8rem;color:var(--blue);font-weight:600}
 .video{margin:2rem 0;max-width:44rem}
 .video iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px}
-footer{background:var(--light);margin-top:3.5rem;padding:2rem 5%;font-size:.92rem;color:var(--muted)}
-footer a{color:var(--blue-dark)}
+footer{background:#fff;margin-top:3.5rem;padding:2rem 5%;font-size:.95rem;color:var(--ink)}
+footer .foot-wrap{max-width:70rem;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+footer .foot-logo{max-height:131px;width:auto;display:block}
+footer .foot-contact h4{font-family:'Urbanist',sans-serif;font-size:1.08rem;margin:0 0 .25rem}
+footer .foot-contact p{margin:0}
+footer a{color:var(--blue)}
+@media(max-width:640px){footer .foot-wrap{flex-direction:column;align-items:flex-start}footer .foot-logo{margin:0 auto}}
 @media(max-width:640px){nav a{margin-left:.8rem}.band h1{font-size:1.6rem}}
 </style>
 </head>
@@ -73,9 +78,13 @@ footer a{color:var(--blue-dark)}
 </ul>
 </main>
 <footer>
-<img src="images/cbio-igh-logo-sq.webp" alt="CBIO Initiatives for Global Health" style="max-height:123px;width:auto;display:block;margin-bottom:1rem">
-<p><strong>CBIO Initiatives for Global Health</strong><br>
-Contact: <a href="mailto:hperry@cbioinitiativesforglobalhealth.org">hperry@cbioinitiativesforglobalhealth.org</a></p>
+<div class="foot-wrap">
+<img src="images/cbio-igh-logo-sq.webp" alt="CBIO Initiatives for Global Health" class="foot-logo">
+<div class="foot-contact">
+<h4>Contact</h4>
+<p><a href="mailto:hperry@cbioinitiativesforglobalhealth.org">hperry@cbioinitiativesforglobalhealth.org</a></p>
+</div>
+</div>
 </footer>
 </body>
 </html>
