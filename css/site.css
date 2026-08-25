@@ -90,7 +90,8 @@ ul.docs li{padding:.42rem 0;border-bottom:1px solid var(--light);display:flex;al
 ul.docs a{text-decoration:none}
 ul.docs a:hover{text-decoration:underline}
 .badge{font-size:.68rem;font-weight:600;letter-spacing:.05em;color:var(--blue-dark);
-background:var(--light);border-radius:3px;padding:.1rem .4rem;flex:none}
+background:var(--light);border-radius:3px;padding:.1rem .4rem;flex:none;
+min-width:4.2rem;text-align:center}
 .note{font-size:.92rem;color:var(--muted);margin:.6rem 0 1rem}
 
 .video{margin:2rem 0;max-width:44rem}
