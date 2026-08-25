@@ -10,10 +10,13 @@
 <link rel="stylesheet" href="css/site.css">
 <style>
 
+.tighten{padding-bottom:1.4rem}
+.give-intro{display:grid;grid-template-columns:1fr 425px;gap:2rem;align-items:start}
+.give-intro img{width:100%;max-width:425px;height:auto;border-radius:8px;display:block}
+@media(max-width:900px){.give-intro{grid-template-columns:1fr}.give-intro img{max-width:425px;margin:0 auto}}
 .give-box{background:var(--light);border-left:4px solid var(--blue);border-radius:8px;padding:1.3rem 1.5rem;margin:1.4rem 0}
 .give-box p{margin:0}
 .addr{font-weight:600;line-height:1.5;margin-top:.6rem}
-.tighten{padding-bottom:1.4rem}
 </style>
 </head>
 <body>
@@ -22,18 +25,18 @@
 <nav><a href="index.html">Home</a><a href="about-us.html">About Us</a><a href="impact.html">Impact</a><a href="library.html">CBIO Library</a><a href="donate.html" class="current">Donate</a><a href="contact.html">Contact</a></nav>
 </header>
 
-<div class="hero">
-<img class="anchor-top" src="images/donate-hero.webp" alt="A health worker counsels a mother using a flipchart while families gather outside a home in rural Guatemala" fetchpriority="high">
-<div class="overlay">
+<div class="band">
 <h1>Make an impact today</h1>
 <p>When you choose to give, you become part of something bigger &mdash; something powerful.</p>
 </div>
-</div>
 <main>
-<section class="tighten">
+<section class="tighten give-intro">
+<div>
 <h2>What your gift makes possible</h2>
 <p>CBIO Initiatives for Global Health runs on volunteer effort &mdash; our board serves without pay &mdash; so contributions go straight into materials we create and share freely with the world. Gifts fund short explainer videos, self-paced courses in English and French, an open online library of CBIO resources, a ready-to-teach toolkit for university faculty, and hands-on support for field practitioners.</p>
 <p>CBIO Initiatives for Global Health is recognized by the Internal Revenue Service as a tax-exempt public charity under section 501(c)(3) of the Internal Revenue Code. Our exempt status is effective from the organization&rsquo;s founding, so earlier gifts are covered as well. Donations from U.S. taxpayers are tax-deductible to the full extent allowed by law, and we provide a receipt for every gift. Our EIN is 41-2956455.</p>
+</div>
+<img src="images/donate-liberia.webp" alt="A community health worker registers households in a village register while women gather around the table, rural Liberia" loading="lazy">
 </section>
 
 <section>
