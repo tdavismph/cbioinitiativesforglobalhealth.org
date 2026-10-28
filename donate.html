@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Urbanist:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 <style>
 
 .tighten{padding-bottom:1.4rem}
@@ -26,6 +27,8 @@
 .give-box{background:var(--light);border-left:4px solid var(--blue);border-radius:8px;padding:1.3rem 1.5rem;margin:1.4rem 0}
 .give-box p{margin:0}
 .addr{font-weight:600;line-height:1.5;margin-top:.6rem}
+button.btn{border:0;cursor:pointer;font:inherit;font-weight:600;font-size:1.05rem;padding:.75rem 1.8rem;margin-top:.9rem}
+.give-box .give-alt{font-size:.9rem;margin-top:.7rem}
 </style>
 </head>
 <body>
@@ -50,12 +53,14 @@
 
 <section>
 <h2>How to give</h2>
-<p>To support the work of CBIO-IGH, please make your check payable to <strong>CBIO Initiatives for Global Health</strong> and send it to the following address:</p>
-<p class="addr">CBIO Initiatives for Global Health<br>2 Elam Court<br>Durham, NC 27705, USA</p>
-<p style="margin-top:1.2rem">To give by direct bank transfer, write to <a href="mailto:hperry@cbioinitiativesforglobalhealth.org">hperry@cbioinitiativesforglobalhealth.org</a> and we will send you the banking details.</p>
 <div class="give-box">
-<p>An online giving option is on its way. Until then, every check mailed and every transfer made moves this work forward &mdash; thank you.</p>
+<p><strong>Give online.</strong> Donations are processed securely by Zeffy, a free platform for nonprofits that charges us no fees, so your whole gift goes to the work.</p>
+<button type="button" class="btn" zeffy-form-link="https://www.zeffy.com/embed/donation-form/save-lives-through-cbio-initiatives-for-global-health?modal=true">Donate now</button>
+<p class="give-alt">If the donation form doesn&rsquo;t open, <a href="https://www.zeffy.com/en-US/donation-form/save-lives-through-cbio-initiatives-for-global-health" target="_blank" rel="noopener">give on our Zeffy page</a> instead.</p>
 </div>
+<p><strong>Give by check.</strong> Please make your check payable to <strong>CBIO Initiatives for Global Health</strong> and send it to:</p>
+<p class="addr">CBIO Initiatives for Global Health<br>2 Elam Court<br>Durham, NC 27705, USA</p>
+<p style="margin-top:1.2rem"><strong>Give by bank transfer.</strong> Write to <a href="mailto:hperry@cbioinitiativesforglobalhealth.org">hperry@cbioinitiativesforglobalhealth.org</a> and we will send you the banking details.</p>
 <p>Thank you for standing with communities as they take charge of their own health.</p>
 </section>
 </main>
