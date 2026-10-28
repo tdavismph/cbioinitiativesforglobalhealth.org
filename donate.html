@@ -80,6 +80,55 @@ button.btn{border:0;cursor:pointer;font:inherit;font-weight:600;font-size:1.05re
 </div>
 </div>
 </footer>
+<script>
+/* Visible close button for the Zeffy donation pop-up (Zeffy's own pop-up has none, and Esc stops working once the donor clicks inside the form). */
+(function () {
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'zeffy-close notranslate';
+  btn.innerHTML = '&#10005; Close';
+  btn.setAttribute('aria-label', 'Close the donation form');
+  var css = document.createElement('style');
+  css.textContent = '.zeffy-close{position:fixed;z-index:10001;top:max(8px,calc(5vh - 46px));right:10vw;display:none;' +
+    'background:#fff;color:#1a1a1a;border:1px solid #ccd;border-radius:20px;padding:.45rem 1rem;font:600 .95rem Poppins,sans-serif;' +
+    'cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)}.zeffy-close:hover{background:#eef2f7}' +
+    '@media(max-width:768px){.zeffy-close{top:8px;right:8px}}';
+  document.head.appendChild(css);
+  document.body.appendChild(btn);
+
+  function formBox() {
+    var f = document.querySelector('iframe[title="Form powered and secured by Zeffy"]');
+    return f ? f.parentElement : null;
+  }
+  function isOpen() { var b = formBox(); return !!b && b.style.display !== 'none' && b.style.opacity !== '0'; }
+  function sync() { btn.style.display = isOpen() ? 'block' : 'none'; }
+
+  // Show the button when a Donate button opens the form; keep it in step as the pop-up opens and closes.
+  document.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('[zeffy-form-link]')) { setTimeout(sync, 50); setTimeout(sync, 400); }
+    else { setTimeout(sync, 400); }
+  });
+  window.addEventListener('message', function () { setTimeout(sync, 400); });
+
+  btn.addEventListener('click', function () {
+    // Ask Zeffy's script to close the pop-up the same way its own form does.
+    window.postMessage({ id: 'zeffy-iframe', close: true }, '*');
+    // Fallback: if it is still open, hide it directly.
+    setTimeout(function () {
+      if (isOpen()) {
+        var b = formBox();
+        [b, b.previousElementSibling].forEach(function (el) {
+          if (el && el.tagName === 'DIV') { el.style.opacity = '0'; el.style.display = 'none'; }
+        });
+        document.querySelectorAll('body > div').forEach(function (el) {
+          if (el.style.zIndex === '10000' && el !== b) { el.style.opacity = '0'; el.style.display = 'none'; }
+        });
+      }
+      sync();
+    }, 350);
+  });
+})();
+</script>
 <script src="js/translate.js" defer></script>
 </body>
 </html>
